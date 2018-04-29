@@ -1,0 +1,39 @@
+<p class="progress-bar"> Please choose people you want to follow</p>
+<blockquote class="blockquote text-center">
+  <div class="container">
+    <div *ngFor="let user of users">
+      <div style="background: antiquewhite">
+        <p>name: {{user.username}} -- email: {{user.email}}</p>
+        <button type="button" class="btn btn-success" (click)="follow(user.username)">Follow</button>
+      </div>
+      <br>
+    </div>
+  </div>
+</blockquote>
+
+<p class="progress-bar"> Please find below people you follow</p>
+<blockquote class="blockquote text-center">
+  <div class="container">
+    <div *ngFor="let follow of follows">
+      <div style="background: antiquewhite">
+        <p>name: {{follow.follow}}</p>
+        <button type="button" class="btn btn-danger" (click)="unfollow(follow.follow)">Unfollow</button>
+      </div>
+      <br>
+    </div>
+  </div>
+</blockquote>
+
+<p class="progress-bar"> Please find below your follows posts</p>
+<blockquote class="blockquote text-center">
+  <div class="container">
+    <div *ngFor="let followsPost of followsPosts">
+      <div style="background: #00B7FF">
+        <h3 style="color: white">{{followsPost.message}}</h3>
+        <p>{{followsPost.hashtag}}</p>
+        <footer class="blockquote-footer" style="color: white">Edited by {{followsPost.username}}:</footer>
+      </div>
+      <br>
+    </div>
+  </div>
+</blockquote>
